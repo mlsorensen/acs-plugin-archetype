@@ -1,0 +1,17 @@
+<assembly>
+  <id>bundle</id>
+  <formats>
+    <format>tar.gz</format>
+  </formats>
+  <includeBaseDirectory>true</includeBaseDirectory>
+  <fileSets>
+    <fileSet>
+      <outputDirectory/>
+    </fileSet>
+  </fileSets>
+  <moduleSets>
+    <moduleSet>
+      <includeSubModules>false</includeSubModules>
+    </moduleSet>
+  </moduleSets>
+</assembly>
