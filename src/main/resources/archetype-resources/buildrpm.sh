@@ -7,7 +7,8 @@ set -e -o pipefail
 PROJECT=${rootArtifactId}
 JAVA_HOME=/usr/lib/jvm/jre-1.8.0
 CWD=`pwd`
-RPMDIR=$CWD/rpmbuild
+RPMDIR="$CWD/rpmbuild"
+DISTRO="el7"
 
 function package() {
     checkGitClean
@@ -29,7 +30,7 @@ function package() {
     echo !!!!!!!!!!!!!
     echo BUILDING RPMs
     echo !!!!!!!!!!!!!
-    (rpmbuild ${DISTRO+"$DISTRO"} --define "_topdir $RPMDIR" --define "_javahome $JAVA_HOME" -bb $RPMDIR/SPECS/$PROJECT.spec)
+    (rpmbuild -Ddist ${DISTRO} --define "_topdir $RPMDIR" --define "_javahome $JAVA_HOME" -bb $RPMDIR/SPECS/$PROJECT.spec)
     cp $RPMDIR/RPMS/x86_64/*.rpm .
 
     echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -51,9 +52,5 @@ function checkGitClean() {
         exit 1;
     fi
 }
-
-if [ "$1" == "el7" ]; then
-    DISTRO="-Ddist .el7"
-fi
 
 package

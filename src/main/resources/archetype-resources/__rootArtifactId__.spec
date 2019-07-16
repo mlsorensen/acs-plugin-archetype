@@ -48,7 +48,7 @@ export JAVA_HOME=%{_javahome}
 mvn -TC1.5
 
 %install
-#server
+${symbol_pound}server
 mkdir -p %{buildroot}/usr/share/%{name}
 mkdir -p %{buildroot}/usr/share/cloudstack-management/lib/
 cp -rf server/scripts %{buildroot}/usr/share/%{name}
@@ -57,12 +57,12 @@ mkdir -p %{buildroot}/usr/share/cloudstack-management/webapp/plugins
 cp -rf server/plugin-ui/* %{buildroot}/usr/share/cloudstack-management/webapp/plugins
 mkdir -p %{buildroot}%{_sysconfdir}/cloudstack/management/META-INF/cloudstack/core
 cp -f server/config/spring-event-bus-context.xml %{buildroot}%{_sysconfdir}/cloudstack/management/META-INF/cloudstack/core/spring-event-bus-context.xml
-#agent
+${symbol_pound}agent
 mkdir -p %{buildroot}/usr/share/cloudstack-agent/lib/scripts
 mkdir -p %{buildroot}/etc/cloudstack/agent
 cp -f agent/target/%{name}-agent-%{version}.jar %{buildroot}/usr/share/cloudstack-agent/lib
 cp -f agent/scripts/* %{buildroot}/usr/share/cloudstack-agent/lib/scripts
-#common
+${symbol_pound}common
 cp -f common/target/%{name}-common-%{version}.jar %{buildroot}/usr/share/cloudstack-management/lib/
 cp -f common/target/%{name}-common-%{version}.jar %{buildroot}/usr/share/cloudstack-agent/lib
 
