@@ -8,7 +8,6 @@ PROJECT=${rootArtifactId}
 JAVA_HOME=/usr/lib/jvm/jre-1.8.0
 CWD=`pwd`
 RPMDIR="$CWD/rpmbuild"
-DISTRO="el7"
 
 function package() {
     checkGitClean
@@ -30,7 +29,7 @@ function package() {
     echo !!!!!!!!!!!!!
     echo BUILDING RPMs
     echo !!!!!!!!!!!!!
-    (rpmbuild -Ddist ${DISTRO} --define "_topdir $RPMDIR" --define "_javahome $JAVA_HOME" -bb $RPMDIR/SPECS/$PROJECT.spec)
+    (rpmbuild --define "_topdir $RPMDIR" --define "_javahome $JAVA_HOME" -bb $RPMDIR/SPECS/$PROJECT.spec)
     cp $RPMDIR/RPMS/x86_64/*.rpm .
 
     echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -47,6 +46,18 @@ function cleanup() {
 }
 
 function checkGitClean() {
+    if ! git status; then
+echo "
+please set up git repo first, e.g. :
+git init
+git add .
+git commit -a -m 'initial commit'
+git config user.email 'you@example.com'
+git config user.name 'Your Name'
+"
+        exit 1;
+    fi
+
     if git status | grep Untracked; then
         echo "untracked files found, clean up before building rpm. Do you need to 'git clean -fxd', or perhaps git add?"
         exit 1;

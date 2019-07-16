@@ -5,9 +5,6 @@ package ${package};
 
 import com.cloud.utils.ReflectUtil;
 
-import java.io.File;
-import java.io.IOException;
-
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,7 +15,6 @@ import java.lang.reflect.Field;
 import org.apache.cloudstack.api.APICommand;
 import org.apache.cloudstack.framework.config.ConfigKey;
 import org.apache.cloudstack.framework.config.Configurable;
-import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 
 import org.springframework.stereotype.Component;

@@ -54,9 +54,6 @@ mkdir -p %{buildroot}/usr/share/cloudstack-management/lib/
 cp -rf server/scripts %{buildroot}/usr/share/%{name}
 cp -f server/target/%{name}-server-%{_ver}.jar %{buildroot}/usr/share/cloudstack-management/lib/
 mkdir -p %{buildroot}/usr/share/cloudstack-management/webapp/plugins
-cp -rf server/plugin-ui/* %{buildroot}/usr/share/cloudstack-management/webapp/plugins
-mkdir -p %{buildroot}%{_sysconfdir}/cloudstack/management/META-INF/cloudstack/core
-cp -f server/config/spring-event-bus-context.xml %{buildroot}%{_sysconfdir}/cloudstack/management/META-INF/cloudstack/core/spring-event-bus-context.xml
 ${symbol_pound}agent
 mkdir -p %{buildroot}/usr/share/cloudstack-agent/lib/scripts
 mkdir -p %{buildroot}/etc/cloudstack/agent
@@ -73,15 +70,12 @@ rm -rf %{buildroot}
 %defattr(640,cloud,cloud,750)
 %attr(750, cloud, cloud) /usr/share/%{name}/scripts/*
 /usr/share/cloudstack-management/lib/*
-%config(noreplace) %{_sysconfdir}/cloudstack/management/META-INF
-/usr/share/cloudstack-management/webapp/plugins/*
 %doc
 
 %files agent
 %defattr(640,root,root,-)
 /usr/share/cloudstack-agent/lib/*.jar
 %attr(750, root, root)/usr/share/cloudstack-agent/lib/scripts/*
-/etc/cloudstack/agent/*
 %doc
 
 %changelog

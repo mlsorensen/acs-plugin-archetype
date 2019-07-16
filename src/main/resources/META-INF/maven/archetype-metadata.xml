@@ -7,7 +7,7 @@
     <fileSet filtered="true" encoding="UTF-8">
       <directory></directory>
       <includes>
-        <include>${rootArtifactId}.spec</include>
+        <include>__rootArtifactId__.spec</include>
         <include>README.md</include>
         <include>buildrpm.sh</include>
       </includes>
@@ -15,8 +15,8 @@
     <fileSet encoding="UTF-8">
       <directory></directory>
       <includes>
-        <include>assembly.xml</include>
         <include>Dockerfile</include>
+        <include>assembly.xml</include>
         <include>Makefile</include>
       </includes>
     </fileSet>
@@ -46,13 +46,13 @@
         <fileSet filtered="true" encoding="UTF-8">
           <directory>config</directory>
           <includes>
-            <include>**/*.xml</include>
+            <include>**/*</include>
           </includes>
         </fileSet>
         <fileSet encoding="UTF-8">
           <directory>scripts</directory>
           <includes>
-            <include>**/*.sh</include>
+            <include>**/*</include>
           </includes>
         </fileSet>
         <fileSet encoding="UTF-8">
@@ -90,7 +90,7 @@
         <fileSet encoding="UTF-8">
           <directory>scripts</directory>
           <includes>
-            <include>**/*.</include>
+            <include>**/*</include>
           </includes>
         </fileSet>
       </fileSets>
