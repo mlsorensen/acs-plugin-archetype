@@ -13,4 +13,5 @@
                       >
 
     <bean id="ServerManagerImpl" class="${package}.ServerManagerImpl" />
+    <bean id="ZoneReportExecutor" class="${package}.executor.ZoneReportExecutor" />
 </beans>

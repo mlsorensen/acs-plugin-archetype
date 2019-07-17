@@ -13,6 +13,7 @@ import java.util.Set;
 import java.lang.reflect.Field;
 
 import org.apache.cloudstack.api.APICommand;
+import org.apache.cloudstack.framework.config.ConfigDepot;
 import org.apache.cloudstack.framework.config.ConfigKey;
 import org.apache.cloudstack.framework.config.Configurable;
 import org.apache.log4j.Logger;
@@ -25,6 +26,8 @@ import ${package}.api.responses.*;
 @Component
 public class ServerManagerImpl implements ServerManager, Configurable {
     private static final Logger s_logger = Logger.getLogger(ServerManagerImpl.class);
+
+    @Inject private ConfigDepot _configDepot;
 
     public ServerManagerImpl() {
         super();
@@ -52,6 +55,7 @@ public class ServerManagerImpl implements ServerManager, Configurable {
                 try {
                     ConfigKey<?> key = (ConfigKey<?>)field.get(ServerManager.class);
                     s_logger.debug("Found configuration key:" + key);
+                    _configDepot.createOrUpdateConfigObject(getConfigComponentName(), key, null);
                     configList.add(key);
                 } catch (IllegalAccessException ex) {
                     s_logger.info("Got illegal access while looking for config keys", ex);
