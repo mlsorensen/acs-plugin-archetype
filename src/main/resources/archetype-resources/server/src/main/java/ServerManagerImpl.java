@@ -12,6 +12,8 @@ import java.util.Set;
 
 import java.lang.reflect.Field;
 
+import javax.inject.Inject;
+
 import org.apache.cloudstack.api.APICommand;
 import org.apache.cloudstack.framework.config.ConfigDepot;
 import org.apache.cloudstack.framework.config.ConfigKey;
