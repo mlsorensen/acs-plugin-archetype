@@ -16,8 +16,8 @@ cd foo-plugin
 make docker-builder # image used for building RPMs
 git init
 git add .
-git commit -a -m 'initial commit'
 git config user.email 'you@example.com'
 git config user.name 'Your Name'
+git commit -a -m 'initial commit'
 make rpm
 ```
