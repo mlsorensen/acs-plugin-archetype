@@ -1,0 +1,6 @@
+agent/target
+server/target
+common/target
+common/dependency-reduced-pom.xml
+target
+*.rpm

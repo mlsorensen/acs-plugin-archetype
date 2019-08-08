@@ -18,6 +18,7 @@
         <include>Dockerfile</include>
         <include>assembly.xml</include>
         <include>Makefile</include>
+        <include>gitignore</include>
       </includes>
     </fileSet>
   </fileSets>
