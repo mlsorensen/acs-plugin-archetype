@@ -1,6 +1,8 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
+
+// From https://cwiki.apache.org/confluence/display/CLOUDSTACK/CloudStack+API+Development
 package ${package}.api.responses;
 
 import com.cloud.serializer.Param;

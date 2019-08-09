@@ -1,6 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
+// from https://cwiki.apache.org/confluence/display/CLOUDSTACK/CloudStack+API+Development
 package ${package}.api.commands;
 
 import org.apache.log4j.Logger;

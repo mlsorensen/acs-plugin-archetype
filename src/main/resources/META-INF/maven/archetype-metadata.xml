@@ -76,13 +76,13 @@
     </module>
     <module id="${rootArtifactId}-agent" dir="agent" name="${rootArtifactId}-agent">
       <fileSets>
-        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+        <fileSet filtered="true" packaged="false" encoding="UTF-8">
           <directory>src/main/java</directory>
           <includes>
             <include>**/*.java</include>
           </includes>
         </fileSet>
-        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+        <fileSet filtered="true" packaged="false" encoding="UTF-8">
           <directory>src/test/java</directory>
           <includes>
             <include>**/*.java</include>
