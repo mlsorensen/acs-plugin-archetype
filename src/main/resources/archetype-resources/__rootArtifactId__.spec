@@ -3,7 +3,7 @@
 #set( $symbol_escape = '\' )
 %global debug_package %{nil}
 %define __jar_repack %{nil}
-%define _ver %(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | egrep -v "^\\[|Downloading")
+%define _ver %(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | egrep -v "^\\[|Download")
 %define _commit %(git rev-parse --short HEAD)
 %define _csver ${cloudstackVersion}
 %define _pluginname ${rootArtifactId}

@@ -25,7 +25,12 @@ git commit -a -m 'initial commit'
 ${symbol_pound}${symbol_pound}${symbol_pound} Building
 
 ```
-make docker-builder
 # before proceeding, ensure pom.xml references version of cloudstack jars installed as prerequisite
+
+# build using docker
+make docker-builder
+make docker-rpm
+
+# build natively on CentOS
 make rpm
 ```
