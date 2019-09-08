@@ -8,8 +8,10 @@ PROJECT=${rootArtifactId}
 JAVA_HOME=/usr/lib/jvm/jre-1.8.0
 CWD=`pwd`
 RPMDIR="$CWD/rpmbuild"
+VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | egrep -v "^\\[|Download")
 
 function package() {
+    checkVersion
     checkGitClean
 
     # create rpm build environment
@@ -42,6 +44,13 @@ function package() {
 function cleanup() {
     if [ -d $RPMDIR ]; then
         rm -rf $RPMDIR
+    fi
+}
+
+function checkVersion() {
+    if [[ $VERSION == *"-"* ]]; then
+        echo "Unable to use artifact version $VERSION for RPM version as it contains a hyphen"
+       exit 1;
     fi
 }
 
