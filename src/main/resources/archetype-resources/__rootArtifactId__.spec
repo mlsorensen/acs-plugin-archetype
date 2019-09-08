@@ -25,7 +25,6 @@ Provides: %{name}-server
 %package agent
 Summary: CloudStack KVM agent plugin - %{name}
 Requires: cloudstack-agent >= %{_csver}, cloudstack-common >= %{_csver}
-Requires: vmfs-tools
 Requires: util-linux
 Requires: coreutils
 Provides: %{name}-agent
