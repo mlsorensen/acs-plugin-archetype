@@ -11,8 +11,8 @@ RUN yum install -y \
         rpm-sign && yum clean all
 
 # we add user's local user into docker image so we can link in .m2 repo
-RUN groupadd -g $gid builder \
-&& useradd -m -u $uid -g builder builder
+RUN groupadd -g $gid builder || echo "gid exists" \
+&& useradd -m -u $uid -g $gid builder || echo "uid exists"
 USER builder
 
 WORKDIR "/src"
