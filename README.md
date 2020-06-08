@@ -1,4 +1,4 @@
-##### Maven Archetype for generating CloudStack Plugins
+# Maven Archetype for generating CloudStack Plugins
 
 This archetype can be used to bootstrap plugin development. 
 
