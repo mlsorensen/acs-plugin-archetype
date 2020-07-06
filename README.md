@@ -6,7 +6,7 @@ It's recommended that you first choose a target CloudStack version (e.g. 4.11.3.
 
 ```
 #in cloudstack source code dir
-git checkout 4.11.3.0
+git checkout 4.14
 mvn clean install -P developer
 # alternatively 'mvn clean install -P developer -Dnoredist' for including VMware and other special license dependencies
 ```
