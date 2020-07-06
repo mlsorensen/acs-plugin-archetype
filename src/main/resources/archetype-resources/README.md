@@ -8,7 +8,7 @@ ${symbol_pound}${symbol_pound}${symbol_pound} Prerequisites
 Ensure you have local cloudstack jars in your ~/.m2 directory for the target cloudstack version. Example:
 ```
 #in cloudstack source code dir
-git checkout 4.11.3.0
+git checkout 4.14
 mvn clean install -P developer
 # alternatively 'mvn clean install -P developer -Dnoredist' for including VMware and other special license dependencies
 ```
