@@ -5,7 +5,6 @@
 set -e -o pipefail
 
 PROJECT=${rootArtifactId}
-JAVA_HOME=/usr/lib/jvm/jre-1.8.0
 CWD=`pwd`
 RPMDIR="$CWD/rpmbuild"
 VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | egrep -v "^\\[|Download")
@@ -31,7 +30,7 @@ function package() {
     echo !!!!!!!!!!!!!
     echo BUILDING RPMs
     echo !!!!!!!!!!!!!
-    (rpmbuild --define "_topdir $RPMDIR" --define "_javahome $JAVA_HOME" -bb $RPMDIR/SPECS/$PROJECT.spec)
+    (rpmbuild --define "_topdir $RPMDIR" -bb $RPMDIR/SPECS/$PROJECT.spec)
     cp $RPMDIR/RPMS/x86_64/*.rpm .
 
     echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

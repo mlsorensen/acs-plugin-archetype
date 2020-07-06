@@ -43,7 +43,6 @@ CloudStack plugin %{name} v%{version} for KVM agent
 mvn clean
 
 %build
-export JAVA_HOME=%{_javahome}
 mvn -TC1.5
 
 %install
