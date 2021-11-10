@@ -18,7 +18,8 @@
     <fileSet encoding="UTF-8">
       <directory></directory>
       <includes>
-        <include>Dockerfile</include>
+        <include>Dockerfile.server</include>
+        <include>Dockerfile.builder</include>
         <include>assembly.xml</include>
         <include>Makefile</include>
         <include>gitignore</include>

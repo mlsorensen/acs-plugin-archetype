@@ -32,3 +32,8 @@ git config user.name 'Your Name'
 git commit -a -m 'initial commit'
 make rpm
 ```
+
+ 3. There is also support for injecting your plugin jar into a CloudStack Docker image. See your plugin's README.md for more information.
+```
+make server
+```
