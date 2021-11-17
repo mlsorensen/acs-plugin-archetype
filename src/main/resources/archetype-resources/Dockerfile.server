@@ -1,9 +1,8 @@
-ARG SERVER="cloudstack/simulator-thin"
+ARG SERVER="cloudstack/simulator-jdk"
 ARG TAG="latest"
 FROM ${SERVER}:${TAG}
 
-ARG LIBPATH="/install/lib/"
+ARG LIBPATH="/usr/share/cloudstack-management/lib/"
 COPY server/target/*.jar ${LIBPATH}
 COPY common/target/*.jar ${LIBPATH}
 RUN rm -f ${LIBPATH}/original*.jar
-RUN echo libpath is ${LIBPATH}

@@ -3,9 +3,9 @@ IMAGE ?= ${REGISTRY}/cloudstack-plugins-builder
 PLUGIN_ARTIFACT ?= $(shell mvn -q -Dexec.executable=echo -Dexec.args='$${project.artifactId}' --non-recursive exec:exec)
 PLUGIN_VERSION ?= $(shell mvn -q -Dexec.executable=echo -Dexec.args='$${project.version}' --non-recursive exec:exec)
 PLUGIN_IMAGE ?= ${REGISTRY}/cloudstack-server_${PLUGIN_ARTIFACT}:${PLUGIN_VERSION}
-SERVER_IMAGE ?= "cloudstack/simulator-thin"
+SERVER_IMAGE ?= "cloudstack/simulator-jdk"
 SERVER_TAG ?= "latest"
-SERVER_LIB ?= "/install/lib/"
+SERVER_LIB ?= "/usr/share/cloudstack-management/lib/"
 SRCDIR ?= $(shell pwd)
 UID ?= $(shell id -u)
 GID ?= $(shell id -g)
