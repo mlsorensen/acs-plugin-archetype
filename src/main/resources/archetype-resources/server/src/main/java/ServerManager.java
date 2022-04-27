@@ -18,7 +18,7 @@ public interface ServerManager extends PluggableService {
     );
 
     static final ConfigKey<Boolean> zoneReportEnabled = new ConfigKey<Boolean>(
-        Boolean.class, "${artifactId}.example.plugin.zonereport.enable", "Advanced", "false", "Example zone report executor enabled", false
+        Boolean.class, "${artifactId}.example.plugin.zonereport.enable", "Advanced", "true", "Example zone report executor enabled", false
     );
 
     static final ConfigKey<Long> zoneReportInterval = new ConfigKey<Long>(
