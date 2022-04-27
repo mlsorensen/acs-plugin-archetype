@@ -19,4 +19,4 @@ docker-rpm:
 	docker run -it -v ${SRCDIR}:/src -v ${HOME}/.m2:/home/builder/.m2 ${IMAGE} /src/buildrpm.sh
 
 image:
-	docker build --build-arg base=${BASE} -t ${TAG}  .
+	docker build --build-arg base=${BASE} -f Dockerfile.cloudstack -t ${TAG}  .
