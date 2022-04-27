@@ -3,3 +3,4 @@ ARG base
 FROM ${base}
 
 ADD server/target/*.jar /usr/share/cloudstack-management/lib
+ADD common/target/*.jar /usr/share/cloudstack-management/lib
